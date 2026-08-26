@@ -1,7 +1,7 @@
 const items=[
  {t:"Ночные хроники",g:"Фэнтези",d:"Тайны города после заката",c:"radial-gradient(circle at 70% 20%,#ef79ff,transparent 20%),linear-gradient(135deg,#27124b,#141a39)"},
  {t:"Неоновый рейд",g:"Экшен",d:"Команда в городе будущего",c:"radial-gradient(circle at 30% 30%,#54b7ff,transparent 20%),linear-gradient(135deg,#102f55,#261238)"},
- {t:"Лунный сад",g:"Романтика",d:"История под светом луны",c:"radial-gradient(circle at 65% 25%,#ffd06b,transparent 18%),linear-gradient(135deg,#22275d,#3c174c)"},
+ {t:"Лунный сад",g:"Романтика",d:"История под светом луны",c:"radial-gradient(circle at 65% 25%,#ffd06b,transparent 18%),linear-radient(135deg,#22275d,#3c174c)"},
  {t:"Шёпот океана",g:"Приключения",d:"Путь к неизвестным островам",c:"radial-gradient(circle at 30% 30%,#62e4ff,transparent 18%),linear-gradient(135deg,#0b4260,#101b3d)"},
  {t:"Академия звёзд",g:"Школа",d:"Новая глава для необычных учеников",c:"radial-gradient(circle at 75% 20%,#ff8ac4,transparent 18%),linear-gradient(135deg,#39204d,#17162f)"},
  {t:"Стальной ветер",g:"Фантастика",d:"Механизмы и тайны прошлого",c:"radial-gradient(circle at 30% 20%,#a9c7ff,transparent 16%),linear-gradient(135deg,#273244,#11131e)"},
