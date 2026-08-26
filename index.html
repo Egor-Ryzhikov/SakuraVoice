@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#090a12">
+<title>AniVoice — Anime Hub</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#home"><span class="brandMark">✦</span><span>AniVoice</span></a>
+  <nav>
+    <a href="#home">Главная</a>
+    <a href="#catalog">Каталог</a>
+    <a href="#studio">Озвучка</a>
+    <a href="#favorites">Избранное <b id="favCount">0</b></a>
+  </nav>
+  <button class="ghost" id="themeBtn" title="Тема">☾</button>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="heroCopy">
+    <span class="pill">АНИМЕ • КАТАЛОГ • ОЗВУЧКА</span>
+    <h1>Смотри. Читай.<br><span>Озвучивай.</span></h1>
+    <p>Красивый автономный аниме-интерфейс с каталогом, поиском, избранным и рабочей студией озвучки.</p>
+    <div class="heroActions">
+      <a class="primary" href="#catalog">Открыть каталог</a>
+      <a class="secondary" href="#studio">Запустить студию</a>
+    </div>
+  </div>
+  <div class="heroArt"><div class="orb"></div><div class="heroCard"><span>ANI</span><strong>VOICE</strong><small>anime hub</small></div></div>
+</section>
+
+<section class="section" id="catalog">
+  <div class="sectionHead">
+    <div><span class="eyebrow">DISCOVER</span><h2>Каталог</h2></div>
+    <input id="search" class="search" placeholder="🔎  Поиск аниме...">
+  </div>
+  <div class="chips" id="chips"></div>
+  <div class="cards" id="cards"></div>
+</section>
+
+<section class="section" id="favorites">
+  <div class="sectionHead"><div><span class="eyebrow">YOUR LIST</span><h2>Избранное</h2></div></div>
+  <div class="cards" id="favoritesGrid"></div>
+</section>
+
+<section class="section" id="studio">
+  <div class="sectionHead"><div><span class="eyebrow">TTS STUDIO</span><h2>Студия озвучки</h2></div></div>
+  <div class="studioGrid">
+    <div class="panel">
+      <textarea id="ttsText" maxlength="12000" placeholder="Введите текст для озвучки..."></textarea>
+      <div class="counter"><span id="charCount">0</span>/12000</div>
+      <div class="controls">
+        <label>Голос<select id="voice"></select></label>
+        <label>Скорость<input id="rate" type="range" min=".5" max="1.8" step=".05" value="1"><output id="rateOut">1.00×</output></label>
+        <label>Высота<input id="pitch" type="range" min=".5" max="2" step=".05" value="1"><output id="pitchOut">1.00</output></label>
+        <label>Громкость<input id="volume" type="range" min="0" max="1" step=".05" value="1"><output id="volumeOut">100%</output></label>
+      </div>
+      <div class="ttsButtons">
+        <button class="primary" id="speak">▶ Озвучить</button>
+        <button class="secondary" id="pause">Ⅱ Пауза</button>
+        <button class="secondary" id="stop">■ Стоп</button>
+      </div>
+      <div class="status" id="status">Готово к озвучке</div>
+      <div class="wave" id="wave"></div>
+    </div>
+    <div class="panel studioInfo">
+      <div class="studioLogo">🎙️</div>
+      <h3>AniVoice TTS</h3>
+      <p>Озвучка использует Web Speech API и доступные на устройстве голоса. Список голосов может отличаться в разных браузерах и ОС.</p>
+      <div class="miniStat"><b>Ctrl + Enter</b><span>быстрый запуск</span></div>
+      <div class="miniStat"><b>Esc</b><span>остановить</span></div>
+      <button class="secondary full" id="demoText">Загрузить демо-текст</button>
+    </div>
+  </div>
+</section>
+</main>
+
+<div class="modal" id="modal">
+  <div class="modalBox">
+    <button class="close" id="close">×</button>
+    <div id="modalContent"></div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+<script src="app.js"></script>
+</body>
+</html>
