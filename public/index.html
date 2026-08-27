@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ru">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AnimeChat 🌸</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<div id="auth" class="center">
+  <div class="auth-card">
+    <div class="logo">🌸</div><h1>AnimeChat</h1><p>Твой мир. Твои друзья. Твоё аниме.</p>
+    <input id="name" placeholder="Имя пользователя" maxlength="32">
+    <input id="pass" type="password" placeholder="Пароль">
+    <div class="row"><button onclick="auth('login')">Войти</button><button class="ghost" onclick="auth('register')">Регистрация</button></div>
+    <div id="error"></div>
+  </div>
+</div>
+
+<div id="app" class="hidden">
+<aside>
+  <div class="brand">🌸 <b>AnimeChat</b></div>
+  <div id="me" class="me"></div>
+  <div class="nav"><button onclick="loadRooms()">💬 Чаты</button><button onclick="showFriends()">👥 Друзья</button><button onclick="showUsers()">🔎 Люди</button><button onclick="createGroup()">➕ Группа</button><button onclick="editProfile()">⚙️ Профиль</button></div>
+  <div id="sideList"></div>
+</aside>
+<main>
+  <header><div><b id="roomTitle">🌸 Аниме-фанаты</b><small id="presence"></small></div>
+    <div><button onclick="startCall(false)">📞</button><button onclick="startCall(true)">🎥</button></div>
+  </header>
+  <section id="messages"></section>
+  <div class="stickers"><button onclick="sticker('🌸')">🌸</button><button onclick="sticker('✨')">✨</button><button onclick="sticker('🥹')">🥹</button><button onclick="sticker('😺')">😺</button><button onclick="sticker('💜')">💜</button></div>
+  <form onsubmit="send(event)"><input id="msg" maxlength="4000" placeholder="Написать сообщение…"><button>➤</button></form>
+</main>
+</div>
+
+<div id="call" class="overlay hidden">
+ <div class="callbox"><div class="callhead"><b>📞 AnimeChat</b><button onclick="hangup()">✕</button></div>
+ <div id="videos"><video id="local" autoplay muted playsinline></video><div id="remotes"></div></div>
+ <div id="callStatus">Подключение…</div><button onclick="toggleMic()">🎙️ Микрофон</button><button onclick="toggleCam()">📷 Камера</button><button onclick="hangup()">Завершить</button>
+ </div>
+</div>
+<script src="/socket.io/socket.io.js"></script><script src="app.js"></script>
+</body></html>
