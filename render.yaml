@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: sakura-messenger
+    runtime: node
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: DATABASE_URL
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      - key: DEVELOPER_USERNAME
+        sync: false
+      - key: CLIENT_ORIGIN
+        value: "*"
